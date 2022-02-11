@@ -3,6 +3,8 @@ FROM alpine:3.15
 ARG KUBECONFORM_VERSION=v0.4.12
 ARG KUSTOMIZE_VERSION=v4.5.2
 
+RUN apk --no-cache add curl
+
 # Install kubeconform
 RUN mkdir /tmp/kubeconform \
   && curl -L -o /tmp/kubeconform/kubeconform.tar.gz \
