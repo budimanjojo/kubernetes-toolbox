@@ -9,7 +9,7 @@
   "rebaseWhen": "conflicted",
   "regexManagers": [
     {
-      "fileMatch": ["^Dockerfile$"],
+      "fileMatch": ["(^|/|\\.)Dockerfile$"],
       "matchStrings": [
         "# renovate: depName=(?<depName>.*) datasource=(?<datasource>.*)\\n\\w+=(?<currentValue>.*)\\b"
       ]
