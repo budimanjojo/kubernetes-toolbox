@@ -17,7 +17,7 @@ RUN mkdir /tmp/kubeconform \
 # Install kustomize
 RUN mkdir /tmp/kustomize \
   && curl -L -o /tmp/kustomize/kustomize.tar.gz \
-  https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv${KUSTOMIZE_VERSION}/kustomize_${KUSTOMIZE_VERSION}_linux_amd64.tar.gz \
+  https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2F${KUSTOMIZE_VERSION}/kustomize_${KUSTOMIZE_VERSION}_linux_amd64.tar.gz \
   && tar -xzf /tmp/kustomize/kustomize.tar.gz -C /tmp/kustomize \
   && mv /tmp/kustomize/kustomize /usr/local/bin \
   && chmod +x /usr/local/bin/kustomize \
