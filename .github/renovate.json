@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "semanticCommits": "enabled",
+  "labels": ["renovatebot"],
+  "commitBody": "Signed-Off-by: Budiman JOJO <budimanjojo@gmail.com>",
+  "semanticCommitScope": "deps",
+  "dependencyDashboard": true,
+  "suppressNotifications": ["prIgnoreNotification"],
+  "rebaseWhen": "conflicted",
+  "regexManagers": [
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "# renovate: depName=(?<depName>.*) datasource=(?<datasource>.*)\\n\\w+=(?<currentValue>.*)\\b"
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true
+    }
+  ]
+}
