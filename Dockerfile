@@ -31,7 +31,7 @@ RUN mkdir /tmp/kustomize \
 RUN pip3 install --no-cache-dir --no-compile yamllint==${YAMLLINT_VERSION}
 
 # Cleanup
-RUN apk del curl py3-pip tar \
+RUN apk del curl py3-pip \
   && find /usr/lib/ -type d -name '__pycache__' -exec rm -rf {} +
 
 CMD ["/bin/sh"]
