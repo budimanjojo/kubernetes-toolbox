@@ -7,7 +7,7 @@ ARG KUSTOMIZE_VERSION=kustomize/v4.5.2
 # renovate: depName=adrienverge/yamllint datasource=github-tags
 ARG YAMLLINT_VERSION=v1.26.3
 
-RUN apk add --no-cache bash curl python3 py3-pip
+RUN apk add --no-cache curl python3 py3-pip
 
 # Install kubeconform
 RUN mkdir /tmp/kubeconform \
@@ -29,6 +29,7 @@ RUN mkdir /tmp/kustomize \
 
 # Install yamllint
 RUN pip3 install --no-cache-dir --no-compile yamllint==${YAMLLINT_VERSION} \
-  && apk del py3-pip
+  && apk del py3-pip \
+  && find /usr/lib/ -type d -name '__pycache__' -exec rm -rf {} +
 
 CMD ["/bin/bash"]
