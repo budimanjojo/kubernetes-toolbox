@@ -28,7 +28,7 @@ RUN mkdir /tmp/kustomize \
   && rm -rf /tmp/kustomize
 
 # Install yamllint
-RUN pip3 install --no-cache-dir --no-compile yamllint=${YAMLLINT_VERSION} \
+RUN pip3 install --no-cache-dir --no-compile yamllint==${YAMLLINT_VERSION} \
   && apk del py3-pip
 
 CMD ["/bin/bash"]
