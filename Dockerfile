@@ -4,8 +4,10 @@ FROM alpine:3.15
 ARG KUBECONFORM_VERSION=v0.4.12
 # renovate: depName=kubernetes-sigs/kustomize datasource=github-releases
 ARG KUSTOMIZE_VERSION=kustomize/v4.5.2
+# renovate: depName=adrienverge/yamllint datasource=github-tags
+ARG YAMLLINT_VERSION=v1.26.3
 
-RUN apk --no-cache add curl
+RUN apk add --no-cache curl python3 py3-pip
 
 # Install kubeconform
 RUN mkdir /tmp/kubeconform \
@@ -24,5 +26,9 @@ RUN mkdir /tmp/kustomize \
   && mv /tmp/kustomize/kustomize /usr/local/bin \
   && chmod +x /usr/local/bin/kustomize \
   && rm -rf /tmp/kustomize
+
+# Install yamllint
+RUN pip3 install --no-cache-dir --no-compile yamllint=${YAMLLINT_VERSION} \
+  && apk del py3-pip
 
 CMD ["/bin/bash"]
