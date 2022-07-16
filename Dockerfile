@@ -1,7 +1,7 @@
 FROM alpine:3.16
 
 # renovate: depName=yannh/kubeconform datasource=github-releases
-ARG KUBECONFORM_VERSION=v0.4.13
+ARG KUBECONFORM_VERSION=v0.4.14
 # renovate: depName=kubernetes-sigs/kustomize datasource=github-releases
 ARG KUSTOMIZE_VERSION=kustomize/v4.5.5
 # renovate: depName=adrienverge/yamllint datasource=github-tags
