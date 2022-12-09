@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.17
 
 # renovate: depName=yannh/kubeconform datasource=github-releases
 ARG KUBECONFORM_VERSION=v0.5.0
