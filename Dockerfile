@@ -5,7 +5,7 @@ ARG KUBECONFORM_VERSION=v0.6.1
 # renovate: depName=kubernetes-sigs/kustomize datasource=github-releases
 ARG KUSTOMIZE_VERSION=kustomize/v5.0.1
 # renovate: depName=adrienverge/yamllint datasource=github-tags
-ARG YAMLLINT_VERSION=v1.29.0
+ARG YAMLLINT_VERSION=v1.30.0
 
 RUN apk add --no-cache curl python3 py3-pip
 
