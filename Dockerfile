@@ -4,6 +4,8 @@ FROM alpine:3.17
 ARG KUBECONFORM_VERSION=v0.6.1
 # renovate: depName=kubernetes-sigs/kustomize datasource=github-releases
 ARG KUSTOMIZE_VERSION=kustomize/v5.0.1
+# renovate: depName=fluxcd/flux2 datasource=github-releases
+ARG FLUX2_VERSION=v2.0.0-rc.1
 # renovate: depName=adrienverge/yamllint datasource=github-tags
 ARG YAMLLINT_VERSION=v1.30.0
 
@@ -26,6 +28,15 @@ RUN mkdir /tmp/kustomize \
   && mv /tmp/kustomize/kustomize /usr/local/bin \
   && chmod +x /usr/local/bin/kustomize \
   && rm -rf /tmp/kustomize
+
+# Install flux2
+RUN mkdir /tmp/flux2 \
+  && curl -L -o /tmp/flux2/flux2.tar.gz \
+  https://github.com/fluxcd/flux2/releases/download/${FLUX2_VERSION}/flux_${FLUX2_VERSION#"v"}_linux_amd64.tar.gz \
+  && tar -xzf /tmp/flux2/flux2.tar.gz -C /tmp/flux \
+  && mv /tmp/flux2/flux /usr/local/bin \
+  && chmod +x /usr/local/bin/flux \
+  && rm -rf /tmp/flux2
 
 # Install yamllint
 RUN pip3 install --no-cache-dir --no-compile yamllint==${YAMLLINT_VERSION}
