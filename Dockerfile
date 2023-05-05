@@ -33,7 +33,7 @@ RUN mkdir /tmp/kustomize \
 RUN mkdir /tmp/flux2 \
   && curl -L -o /tmp/flux2/flux2.tar.gz \
   https://github.com/fluxcd/flux2/releases/download/${FLUX2_VERSION}/flux_${FLUX2_VERSION#"v"}_linux_amd64.tar.gz \
-  && tar -xzf /tmp/flux2/flux2.tar.gz -C /tmp/flux \
+  && tar -xzf /tmp/flux2/flux2.tar.gz -C /tmp/flux2 \
   && mv /tmp/flux2/flux /usr/local/bin \
   && chmod +x /usr/local/bin/flux \
   && rm -rf /tmp/flux2
