@@ -15,6 +15,7 @@ I use [renovate](https://github.com/renovatebot/renovate) to auto update those b
 
 - [kubeconform](https://github.com/yannh/kubeconform)
 - [kustomize](https://github.com/kubernetes-sigs/kustomize)
+- [flux](https://github.com/fluxcd/flux2)
 - [yamllint](https://github.com/adrienverge/yamllint)
 
 ## :scroll:&nbsp; Usage
