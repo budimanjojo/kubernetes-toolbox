@@ -1,7 +1,7 @@
 FROM alpine:3.18
 
 # renovate: depName=yannh/kubeconform datasource=github-releases
-ARG KUBECONFORM_VERSION=v0.6.1
+ARG KUBECONFORM_VERSION=v0.6.2
 # renovate: depName=kubernetes-sigs/kustomize datasource=github-releases
 ARG KUSTOMIZE_VERSION=kustomize/v5.0.3
 # renovate: depName=fluxcd/flux2 datasource=github-releases
