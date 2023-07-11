@@ -5,7 +5,7 @@ ARG KUBECONFORM_VERSION=v0.6.2
 # renovate: depName=kubernetes-sigs/kustomize datasource=github-releases
 ARG KUSTOMIZE_VERSION=kustomize/v5.1.0
 # renovate: depName=fluxcd/flux2 datasource=github-releases
-ARG FLUX2_VERSION=v2.0.0-rc.5
+ARG FLUX2_VERSION=v2.0.1
 # renovate: depName=adrienverge/yamllint datasource=github-tags
 ARG YAMLLINT_VERSION=v1.32.0
 
