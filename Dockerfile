@@ -9,7 +9,7 @@ ARG FLUX2_VERSION=v2.0.1
 # renovate: depName=adrienverge/yamllint datasource=github-tags
 ARG YAMLLINT_VERSION=v1.32.0
 
-RUN apk add --no-cache curl python3 py3-pip bash git
+RUN apk add --no-cache curl python3 py3-pip bash git yq ca-certificates openssh-client
 
 # Install kubeconform
 RUN mkdir /tmp/kubeconform \
@@ -42,7 +42,7 @@ RUN mkdir /tmp/flux2 \
 RUN pip3 install --no-cache-dir --no-compile yamllint==${YAMLLINT_VERSION}
 
 # Cleanup
-RUN apk del curl py3-pip \
+RUN apk del py3-pip \
   && find /usr/lib/ -type d -name '__pycache__' -exec rm -rf {} +
 
 CMD ["/bin/bash"]
