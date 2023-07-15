@@ -9,7 +9,7 @@ ARG FLUX2_VERSION=v2.0.1
 # renovate: depName=adrienverge/yamllint datasource=github-tags
 ARG YAMLLINT_VERSION=v1.32.0
 
-RUN apk add --no-cache curl python3 py3-pip bash git
+RUN apk add --no-cache curl python3 py3-pip bash git yq
 
 # Install kubeconform
 RUN mkdir /tmp/kubeconform \
