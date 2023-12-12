@@ -39,7 +39,7 @@ RUN mkdir /tmp/flux2 \
   && rm -rf /tmp/flux2
 
 # Install yamllint
-RUN pip3 install --no-cache-dir --no-compile yamllint==${YAMLLINT_VERSION}
+RUN pip3 install --no-cache-dir --no-compile --break-system-packages yamllint==${YAMLLINT_VERSION}
 
 # Cleanup
 RUN apk del py3-pip \
