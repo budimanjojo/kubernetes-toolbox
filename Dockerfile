@@ -7,7 +7,7 @@ ARG KUSTOMIZE_VERSION=kustomize/v5.6.0
 # renovate: depName=fluxcd/flux2 datasource=github-releases
 ARG FLUX2_VERSION=v2.5.1
 # renovate: depName=adrienverge/yamllint datasource=github-tags
-ARG YAMLLINT_VERSION=v1.36.0
+ARG YAMLLINT_VERSION=v1.36.1
 
 RUN apk add --no-cache curl python3 py3-pip bash git yq ca-certificates openssh-client
 
